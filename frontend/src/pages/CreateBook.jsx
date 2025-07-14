@@ -23,7 +23,7 @@ const CreateBooks = () => {
     };
     setLoading(true);
     axios
-      .post(`${import.meta.env.vite.BACKEND_URL}/books`, data)
+      .post(`${import.meta.env.VITE_BACKEND_URL}/books`, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar("Book Created successfully", { variant: "success" });
