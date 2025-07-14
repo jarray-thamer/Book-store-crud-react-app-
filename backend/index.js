@@ -12,19 +12,20 @@ app.use(cors());
 
 app.get("/", (request, response) => {
   console.log(request);
-  return response.status(234).send("Welcome To MERN Stack Tutorial");
+  return response.status(234).send("Welcome To MERN Stack APP");
 });
 
 app.use("/books", booksRoutes);
 
+// Connect to MongoDB when the app starts
 mongoose
   .connect(process.env.mongoDBURL)
   .then(() => {
     console.log("App connected to database");
-    app.listen(PORT, () => {
-      console.log(`App is listening to port: ${PORT}`);
-    });
   })
   .catch((error) => {
     console.log(error);
   });
+
+// Export the app for Vercel (remove app.listen())
+export default app;
