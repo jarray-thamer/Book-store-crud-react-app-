@@ -17,7 +17,7 @@ const Home = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`${import.meta.env.vite.BACKEND_URL}`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}`)
       .then((response) => {
         setBooks(response.data.data);
         setLoading(false);
