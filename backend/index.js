@@ -8,13 +8,16 @@ const app = express();
 
 app.use(express.json());
 
+// Correct CORS configuration - allowing all origins
 app.use(cors({
-  origin: "*"
+  origin: "*",
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.get("/", (request, response) => {
   console.log(request);
-  return response.status(234).send("Welcome To MERN Stack APP");
+  return response.status(200).send("Welcome To MERN Stack APP");
 });
 
 app.use("/books", booksRoutes);
