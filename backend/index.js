@@ -18,7 +18,7 @@ app.get("/", (request, response) => {
 app.use("/books", booksRoutes);
 
 mongoose
-  .connect(proccess.env.mongoDBURL)
+  .connect(process.env.mongoDBURL)
   .then(() => {
     console.log("App connected to database");
     app.listen(PORT, () => {
