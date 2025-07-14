@@ -9,7 +9,7 @@ import BooksCard from "../components/home/BooksCard";
 
 const Home = () => {
   const [books, setBooks] = useState([
-    { title: "state1", author: "author2", publishYear: 2002 },
+   
   ]);
   const [loading, setLoading] = useState(false);
   const [showType, setShowType] = useState("table");
